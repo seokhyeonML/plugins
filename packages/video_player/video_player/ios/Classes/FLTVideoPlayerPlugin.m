@@ -934,6 +934,11 @@ FLTVideoPlayer* player = _players[input.textureId];
 [player setVolume:[input.volume doubleValue]];
 }
 
+- (void)setPlaybackSpeed:(FLTPlaybackSpeedMessage*)input error:(FlutterError**)error {
+FLTVideoPlayer* player = _players[input.textureId];
+[player setPlaybackSpeed:[input.speed doubleValue]];
+}
+
 - (void)play:(FLTTextureMessage*)input error:(FlutterError**)error {
 FLTVideoPlayer* player = _players[input.textureId];
 [player play];
